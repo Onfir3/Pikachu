@@ -37,11 +37,11 @@
 }
 .eye.left {
     right: 50%;
-    margin-right: 90px;
+    margin-right: 80px;
 }
 .eye.right {
     left: 50%;
-    margin-left: 90px;
+    margin-left: 80px;
 }
 .face {
     width: 68px;
@@ -70,6 +70,7 @@
 }
 .upperLip.left {
     right: 50%;
+    margin-right: 1px;
     border-bottom-left-radius: 40px 25px;
     border-top: none;
     border-right: none;
@@ -77,6 +78,7 @@
 }
 .upperLip.right {
     left: 50%;
+    margin-left: 1px;
     border-bottom-right-radius: 40px 25px;
     border-top: none;
     border-left: none;
