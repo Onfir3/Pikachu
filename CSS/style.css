@@ -14,5 +14,33 @@
     position: absolute;
     left: 50%; /*百分之50其实是最左边在于中线，所以需要将元素再左移一半才能真正居中。*/
     top: 28px;
-    transform: translateX(-50%)； /*或者使用margin-left: -12px;*/
+    transform: translateX(-50%);/*或者使用margin-left: -12px;*/
+}
+.eye {
+    width: 49px;
+    height: 49px;
+    background: #2E2E2E;
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid #000000;
+}
+.eye::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 24px;
+    background: white;
+    position: absolute;
+    border-radius: 50%;
+    left: 6px;
+    top: -1px;
+    border: 2px solid #000000;
+}
+.eye.left {
+    right: 50%;
+    margin-right: 90px;
+}
+.eye.right {
+    left: 50%;
+    margin-left: 90px;
 }
