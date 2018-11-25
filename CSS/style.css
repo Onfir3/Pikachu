@@ -1,7 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+*::after {
+    box-sizing: border-box;
+}
+*::before {
+    box-sizing: border-box;
+}
+.preview {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #FEE433;
+}
 .head {
     width: 100%;
     height: 165px;
     position: relative;
+}
+.head > :not(:last-child) {   /*在.head下只要不是最后一个元素其它所有*/
+    z-index: 1;
 }
 .nose {
     width: 0px;
@@ -89,7 +110,6 @@
     position: absolute;
     left: 50%;
     margin-left: -150px;
-    z-index: -1;
     height: 130px;
     overflow: hidden;
     width: 300px;
