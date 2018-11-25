@@ -14,9 +14,14 @@ body {
     display: flex;
     flex-direction: column;
 }
+#code {
+    overflow: hidden;
+    height: 100%;
+}
 .code-wrapper {
     flex: 1;
     height: 50%;
+    padding: 10px;
 }
 .preview-wrapper {
     flex: 1;
