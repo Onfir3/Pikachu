@@ -1,18 +1,20 @@
 !function (){
+    var duration = 50
     function writeCode(prefix, code, fn){
         let container = document.querySelector('#code')
         let styleTag = document.querySelector('#styleTag')
         let n = 0
-        let id = setInterval(()=>{
+        let id = setTimeout(function run(){
             n += 1
             container.innerHTML = Prism.highlight(prefix + code.substring(0, n), Prism.languages.css)
             styleTag.innerHTML = code.substring(0,n)
             container.scrollTop = container.scrollHeight
-            if(n >= code.length){
-                window.clearInterval(id)
+            if(n <= code.length){
+                setTimeout(run, duration)
+            }else{
                 fn && fn.call()
             }
-        },10)
+        },duration)   //setTimeout可以模拟setInterval,setTimeout有助于调速
     }
     let code =`
     .preview {
@@ -107,8 +109,8 @@
         left: 50%;
         margin-left: 1px;
         border-bottom-right-radius: 40px 25px;
-        border-top: none;
-        border-left: none;
+        border-top: transparent;
+        border-left: transparent;
         transform: rotate(20deg);
     }
     .lowerLip-wrapper {
@@ -149,5 +151,16 @@
         let speed = $button.attr('data-speed')
         $button.addClass('active')
         .siblings('.active').removeClass('active')
+        switch(speed) {
+            case 'slow':
+            duration = 100
+            break
+            case 'normal':
+            duration = 50
+            break
+            case 'fast':
+            duration = 10
+            break
+        }
     })
 }.call()
