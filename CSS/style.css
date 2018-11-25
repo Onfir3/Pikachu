@@ -15,7 +15,7 @@ body {
     flex-direction: column;
 }
 #code {
-    overflow: hidden;
+    overflow: scroll;
     height: 100%;
 }
 .code-wrapper {
